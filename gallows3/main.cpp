@@ -4,6 +4,7 @@
 #include"Game.h"
 #include<Windows.h>
 #include"Cryptographer.h"
+#include"MainMenu.h"
 
 int main() {
 	srand(time(0));
@@ -11,11 +12,30 @@ int main() {
 	try
 	{
 		WordsManager manager;
+		MainMenu menu;
 		ConsoleGameView consoleView;
 		const auto var = std::make_shared<WordsManager>(manager);
 
 		Game game(std::make_shared<WordsManager>(manager), std::make_unique<ConsoleGameView>(consoleView));
-		game.Start();
+		while (true) {
+			switch (menu.Menu())
+			{
+			case 1:
+				game.Start();
+				break;
+			case 2:
+				menu.Records();
+				break;
+			case 3:
+				return 0;
+				break;
+			case 4:
+				menu.Settings();
+				break;
+			default:
+				break;
+			}
+		}
 	}
 	catch (const std::exception& e)
 	{

@@ -133,12 +133,14 @@
     <ClInclude Include="GameWord.h" />
     <ClInclude Include="GameWordsBuilder.h" />
     <ClInclude Include="IGameView.h" />
+    <ClInclude Include="MainMenu.h" />
     <ClInclude Include="WordsManager.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="Records.txt" />
     <Text Include="words.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

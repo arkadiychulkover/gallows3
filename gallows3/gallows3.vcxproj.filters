@@ -36,6 +36,9 @@
     <ClInclude Include="WordsManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="MainMenu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -44,6 +47,9 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="words.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="Records.txt">
       <Filter>Source Files</Filter>
     </Text>
   </ItemGroup>
