@@ -19,7 +19,14 @@ public:
 		std::cout << std::endl;
 	}
 	void DisplayMistakes(int mistaked) override {
-			std::cout << "Mistakes(" << mistaked << "/6)" << '\n';
+		std::cout << "|---" << '\n';
+		std::cout << "| | " << '\n';
+		std::cout << "| " << (mistaked > 0 ? "O" : " ") << '\n';
+		std::cout << "|" << (mistaked > 1 ? "/" : " ") << (mistaked > 2 ? "|" : " ") << (mistaked > 3 ? "\\" : " ") << '\n';
+		std::cout << "|" << (mistaked > 4 ? "/" : " ") << " " << (mistaked > 5 ? "\\" : " ") << '\n';
+		std::cout << "|" << '\n';
+		std::cout << "----- " << '\n';
+		std::cout << "Mistakes(" << mistaked << "/6)" << '\n';
 	}
 
 	void DisplayMessage(const std::string& word) override {

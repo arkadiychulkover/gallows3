@@ -4,3 +4,7 @@ EXIT 1
 Exit 1
 ftest 1
 fffff 0
+firstMANtest 0
+secondManTest 0
+Final 1
+GrandFinal 6
