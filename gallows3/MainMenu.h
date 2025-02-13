@@ -21,7 +21,7 @@ public:
 		return choise;
 	}
 
-	int Settings() {
+	void Settings() {
 		std::cout << "Settings" << std::endl;
 		std::cout << "Do You want to Append word (y/n)" << std::endl;
 		std::cout << "Enter: ";
@@ -33,13 +33,12 @@ public:
 				std::string word;
 				std::cin >> word;
 				manager.Append(word, 5);
-				int a;
-				std::cout << "enter to menu";
+				char a;
+				std::cout << "enter letter to menu";
 				std::cin >> a;
-				return 0;
+				break;
 			}
 			else if (input == 'n') {
-				return 1;
 				break;
 			}
 			else {

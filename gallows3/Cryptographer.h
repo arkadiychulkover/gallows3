@@ -107,7 +107,6 @@ public:
                 tempik += replacementMap[ch] + key;
             }
         }
-        std::cout << tempik;
         return tempik;
     }
 };
