@@ -1,2 +1,4 @@
 testOne 4
 test242 6
+EXIT 1
+Exit 1

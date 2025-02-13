@@ -16,8 +16,8 @@ int main() {
 		ConsoleGameView consoleView;
 		const auto var = std::make_shared<WordsManager>(manager);
 
-		Game game(std::make_shared<WordsManager>(manager), std::make_unique<ConsoleGameView>(consoleView));
 		while (true) {
+			Game game(std::make_shared<WordsManager>(manager), std::make_unique<ConsoleGameView>(consoleView));
 			switch (menu.Menu())
 			{
 			case 1:

@@ -45,6 +45,11 @@ public:
 			{
 				view->WordGuessed();
 				words_count++;
+				if (view->IsGameExit())
+				{
+					SaveReecord(words_count);
+					break;
+				}
 			}
 			else
 			{
@@ -52,7 +57,7 @@ public:
 				SaveReecord(words_count);
 				break;
 			}
-		} while (!view->IsGameExit());
+		} while (true);
 	}
 
 	void End() {
