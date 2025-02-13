@@ -2,6 +2,7 @@
 #include"GameWord.h"
 #include"GameWordsBuilder.h"
 #include"IGameView.h"
+#include"Cryptographer.h"
 #include<memory>
 
 using std::unique_ptr;
@@ -12,6 +13,7 @@ private:
 	unique_ptr<GameWord> current_word;
 	int mistakes;
 	GameWordsBuilder wordsBuilder;
+	Cryptographer crypto;
 	unique_ptr<IGameView> view;
 	const int max_mistakes = 6;
 	int players_count;
@@ -68,6 +70,7 @@ public:
 		std::string name;
 		std::cout << "Enter your name: ";
 		std::cin >> name;
+		name = crypto.Encrypt(name, 5);
 		std::ofstream output("Records.txt", std::ios::app);
 		if (output.is_open())
 		{

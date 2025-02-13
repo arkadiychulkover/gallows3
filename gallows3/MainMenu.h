@@ -3,11 +3,14 @@
 #include<iostream>
 #include<algorithm>
 #include"WordsManager.h"
+#include<fstream>
+#include"Cryptographer.h"
 
 class MainMenu
 {
 private:
 	WordsManager manager;
+	Cryptographer crypto;
 public:
 	int Menu() {
 		std::cout << "Gallow!" << std::endl;
@@ -51,8 +54,32 @@ public:
 		std::cout << "Records" << std::endl;
 		std::ifstream input("Records.txt");
 		std::string records;
+		std::string temp;
+		int space = 0;
+		int afterSpace = 0;
 		while (std::getline(input, records)) {
-			std::cout << records << std::endl;
+			for (char ch : records) {
+				if (ch == ' ') {
+					space++;
+				}
+
+				if (space == 1) {
+					temp = crypto.Decrypt(temp, 5);
+					if (afterSpace == 0)
+					{
+						std::cout << "Name: " << temp << " Words:";
+						temp.clear();
+					}
+					afterSpace++;
+				}
+
+				temp += ch;
+				if (afterSpace == 2)
+					std::cout << temp << std::endl;
+			}
+			temp.clear();
+			space = 0;
+			afterSpace = 0;
 		}
 	}
 };
